@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 
-//TODO: More testing required, check each part of the code individually and check off here
 class Program{
     static void Main(string[] args){
         //string? gets rid of null warnings by telling the program that the variable can hold a null
@@ -148,7 +147,7 @@ class Program{
             //find name of the file
             name_file = Path.GetFileName(file);
 
-            //adds the files to the target folder
+            //adds the files to the target folder, shows error if something went wrong
             try{
                 File.Move(file, (new_folder_path + separator + name_file));
             }
@@ -192,7 +191,7 @@ class Program{
                 new_folders.Add(new_folder_path);
             }
 
-            //adds the files to the target folder
+            //adds the files to the target folder, shows error if something went wrong
             try{
                 File.Move(file, (new_folder_path + separator + name_file));
             }
@@ -252,7 +251,7 @@ class Program{
                 new_folders.Add(new_folder_path);
             }
 
-            //adds the files to the target folder
+            //adds the files to the target folder, shows error if something went wrong
             try{
                 File.Move(file, (new_folder_path + seperator + name_file));
             }
