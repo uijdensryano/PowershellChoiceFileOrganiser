@@ -1,9 +1,12 @@
 ﻿using System;
 using System.IO;
 
+/* All system.io functions learned from https://learn.microsoft.com/en-us/dotnet/api/system.io?view=net-9.0 */
+
 class Program{
     static void Main(string[] args){
-        //string? gets rid of null warnings by telling the program that the variable can hold a null
+        /* string? gets rid of null warnings by telling the program that the variable can hold a null
+        learned about this at https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator */
         string? folder_path = "", sort_type = "", need_help, manual_naming = "";
         bool boolcontinue;
         List<string> new_folders = new List<string>();
@@ -28,6 +31,7 @@ class Program{
             boolcontinue = true;
         }
         else if(need_help == "n" || need_help == ""){
+
             folder_path = Console.ReadLine();
             sort_type = Console.ReadLine();
             manual_naming = Console.ReadLine();
@@ -42,7 +46,7 @@ class Program{
         if(boolcontinue && Directory.Exists(folder_path) && (manual_naming == "y" || manual_naming == "n")
          && new List<string> {"1","2","3","4","5"}.Contains(sort_type ?? "6")){
             switch(sort_type){
-                /* the functions, apart from sorting files, also returns the names of newly made files, these will then be used later
+                /* the functions, apart from sorting files, also returns the names of newly made folders, these will then be used later
                     in case the user has opted to manually name the files */
                 case "1":
                     new_folders = SortExtension(folder_path);
